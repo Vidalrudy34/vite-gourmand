@@ -5,7 +5,7 @@
  * adaptées à une installation locale (voir README.md).
  */
 
-function env(string $key, $default = null) {
+
 if (!function_exists('env')) {
 function env(string $key, $default = null) {
     $value = getenv($key);
