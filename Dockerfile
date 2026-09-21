@@ -27,5 +27,7 @@ RUN sed -ri -e "s!/var/www/html!\${APACHE_DOCUMENT_ROOT}!g" /etc/apache2/sites-a
     && a2enmod rewrite
 
 RUN chown -R www-data:www-data /var/www/html/storage
+RUN a2dismod mpm_event || true && a2enmod mpm_prefork
 
 EXPOSE 80
+S
