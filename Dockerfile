@@ -30,4 +30,3 @@ RUN chown -R www-data:www-data /var/www/html/storage
 RUN a2dismod mpm_event || true && a2enmod mpm_prefork
 
 EXPOSE 80
-S
