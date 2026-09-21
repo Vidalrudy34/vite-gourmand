@@ -1,0 +1,71 @@
+:root {
+    --vg-primary: #C1440E;
+    --vg-primary-dark: #8f3209;
+    --vg-secondary: #2F4B3C;
+    --vg-cream: #FBF3E7;
+    --vg-text: #2B2118;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    background-color: var(--vg-cream);
+    color: var(--vg-text);
+}
+
+.navbar {
+    background-color: var(--vg-secondary) !important;
+}
+
+footer {
+    background-color: var(--vg-secondary) !important;
+}
+
+.btn-primary {
+    background-color: var(--vg-primary);
+    border-color: var(--vg-primary);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--vg-primary-dark);
+    border-color: var(--vg-primary-dark);
+}
+
+a {
+    color: var(--vg-primary);
+}
+
+.hero {
+    background: linear-gradient(rgba(47,75,60,.75), rgba(47,75,60,.75)), url('/assets/img/hero.jpg') center/cover no-repeat;
+    color: #fff;
+    padding: 5rem 0;
+}
+
+.card-menu {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    transition: transform .15s ease-in-out;
+    height: 100%;
+}
+
+.card-menu:hover {
+    transform: translateY(-4px);
+}
+
+.badge-theme {
+    background-color: var(--vg-primary);
+}
+
+.avis-card {
+    background: #fff;
+    border-radius: .5rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    height: 100%;
+}
+
+.skip-link:focus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}

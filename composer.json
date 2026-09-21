@@ -1,0 +1,11 @@
+{
+    "name": "fastdev/vite-gourmand",
+    "description": "Vite & Gourmand - Application web de présentation de menus et de prise de commande",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "ext-pdo": "*",
+        "ext-mongodb": "*",
+        "mongodb/mongodb": "^1.17"
+    }
+}

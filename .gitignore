@@ -1,0 +1,6 @@
+/vendor/
+/storage/mails/*
+!/storage/mails/.gitkeep
+.env
+.DS_Store
+*.log
