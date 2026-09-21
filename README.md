@@ -52,6 +52,27 @@ Application web de présentation de menus et de prise de commande pour l'entrepr
    ```
    L'application est accessible sur http://localhost:8000
 
+## Lancer le projet avec Docker (recommandé, tout-en-un)
+
+```bash
+docker compose up --build
+```
+
+Cela démarre l'application PHP/Apache, une base MySQL (initialisée automatiquement avec `sql/01_structure.sql`
+et `sql/02_donnees.sql`) et une base MongoDB. L'application est accessible sur http://localhost:8000
+
+## Déploiement en ligne (Railway, exemple)
+
+1. Créer un compte sur [Railway](https://railway.app) (ou tout hébergeur supportant un `Dockerfile`).
+2. Créer un nouveau projet à partir du dépôt GitHub public de l'application.
+3. Railway détecte le `Dockerfile` et construit l'image automatiquement.
+4. Ajouter un service MySQL (plugin Railway) et un service MongoDB (ou utiliser MongoDB Atlas, offre gratuite).
+5. Renseigner les variables d'environnement du service applicatif (`DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`,
+   `MONGO_URI`, `MONGO_DB`, `APP_URL`, `MAIL_LOG_ONLY=false`) avec les informations fournies par les services ajoutés.
+6. Importer `sql/01_structure.sql` puis `sql/02_donnees.sql` dans la base MySQL de production (Railway propose un
+   client SQL intégré, ou `mysql -h <host> -u <user> -p < sql/01_structure.sql`).
+7. Une fois déployé, vérifier les 3 parcours (visiteur, utilisateur, employé/admin) avant de transmettre le lien.
+
 ## Comptes de démonstration
 
 | Rôle           | Email                        | Mot de passe    |

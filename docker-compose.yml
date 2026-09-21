@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8000:80"
+    environment:
+      APP_URL: http://localhost:8000
+      APP_ENV: local
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: vite_gourmand
+      DB_USER: root
+      DB_PASSWORD: root
+      MONGO_URI: mongodb://mongo:27017
+      MONGO_DB: vite_gourmand_stats
+      MAIL_LOG_ONLY: "true"
+    depends_on:
+      - mysql
+      - mongo
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: vite_gourmand
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./sql/01_structure.sql:/docker-entrypoint-initdb.d/01_structure.sql
+      - ./sql/02_donnees.sql:/docker-entrypoint-initdb.d/02_donnees.sql
+
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
